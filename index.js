@@ -28,6 +28,7 @@ module.exports = {
     return pts;
   },
 
+
   /**
    * Slice out a segment of 'points'
    * @param {Array} points
@@ -43,6 +44,7 @@ module.exports = {
 
     return pts;
   },
+
 
   /**
    * Convert 'points' to svg path

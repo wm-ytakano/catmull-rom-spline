@@ -1,5 +1,12 @@
 'use strict';
 
+/**
+ * Convert a series of points to a CatmullRom spline
+ * https://github.com/yr/catmull-rom-spline
+ * @copyright Yr
+ * @license MIT
+ */
+
 module.exports = {
   /**
    * Convert 'points' to catmull rom bezier spline

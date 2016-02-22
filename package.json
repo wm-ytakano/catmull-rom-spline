@@ -6,11 +6,11 @@
   "dependencies": {
   },
   "devDependencies": {
-    "buddy": "3.1.x",
+    "buddy": "*",
+    "buddy-plugin-babel": "6.5.2-2",
     "expect.js": "*",
     "mocha": "*",
-    "mocha-phantomjs": "*",
-    "transfigure-babel": "6.1.x"
+    "mocha-phantomjs": "*"
   },
   "main": "src/index.js",
   "repository": "https://github.com/YR/catmull-rom-spline.git",
@@ -24,15 +24,15 @@
   "build": {
     "targets": [
       {
+        "input": "src",
+        "output": ".",
+        "modular": false
+      },
+      {
         "input": "src/index.js",
         "output": "test/lib.js",
         "boilerplate": true,
         "bootstrap": true
-      },
-      {
-        "input": "src",
-        "output": ".",
-        "modular": false
       }
     ]
   }
