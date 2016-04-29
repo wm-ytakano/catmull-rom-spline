@@ -1,5 +1,12 @@
 'use strict';
 
+/**
+ * Convert a series of points to a CatmullRom spline
+ * https://github.com/yr/catmull-rom-spline
+ * @copyright Yr
+ * @license MIT
+ */
+
 module.exports = {
   /**
    * Convert 'points' to catmull rom bezier spline
@@ -9,12 +16,11 @@ module.exports = {
 
   points: function points(_points) {
     var n = _points.length;
-
-    var p0 = _points[0],
-        p1 = _points[0],
-        p2 = _points[1],
-        p3 = _points[2],
-        pts = [_points[0]];
+    var p0 = _points[0];
+    var p1 = _points[0];
+    var p2 = _points[1];
+    var p3 = _points[2];
+    var pts = [_points[0]];
 
     for (var i = 1; i < n; i++) {
       pts.push([(-p0[0] + 6 * p1[0] + p2[0]) / 6, (-p0[1] + 6 * p1[1] + p2[1]) / 6, (p1[0] + 6 * p2[0] - p3[0]) / 6, (p1[1] + 6 * p2[1] - p3[1]) / 6, p2[0], p2[1]]);
@@ -55,8 +61,8 @@ module.exports = {
     var p = '';
 
     for (var i = 0; i < points.length; i++) {
-      var point = points[i],
-          n = point.length;
+      var point = points[i];
+      var n = point.length;
 
       if (!i) {
         p += 'M' + point[n - 2] + ' ' + point[n - 1];

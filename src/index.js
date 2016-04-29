@@ -15,12 +15,11 @@ module.exports = {
    */
   points (points) {
     const n = points.length;
-
-    let p0 = points[0]
-      , p1 = points[0]
-      , p2 = points[1]
-      , p3 = points[2]
-      , pts = [points[0]];
+    let p0 = points[0];
+    let p1 = points[0];
+    let p2 = points[1];
+    let p3 = points[2];
+    let pts = [points[0]];
 
     for (let i = 1; i < n; i++) {
       pts.push([
@@ -66,8 +65,8 @@ module.exports = {
     let p = '';
 
     for (let i = 0; i < points.length; i++) {
-      const point = points[i]
-        , n = point.length;
+      const point = points[i];
+      const n = point.length;
 
       if (!i) {
         p += 'M' + (point[n - 2]) + ' ' + (point[n - 1]);
