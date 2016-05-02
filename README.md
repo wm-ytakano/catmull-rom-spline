@@ -1,7 +1,7 @@
 [![NPM Version](https://img.shields.io/npm/v/@yr/catmull-rom-spline.svg?style=flat)](https://npmjs.org/package/@yr/catmull-rom-spline)
 [![Build Status](https://img.shields.io/travis/YR/catmull-rom-spline.svg?style=flat)](https://travis-ci.org/YR/catmull-rom-spline?branch=master)
 
-Convert a series of points to a CatmullRom spline
+Convert a series of points to a CatmullRom spline.
 
 ## Usage
 
