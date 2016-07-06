@@ -15,6 +15,10 @@ module.exports = {
    */
   points (points) {
     const n = points.length;
+
+    // Abort if there are not sufficient points to draw a curve
+    if (n < 3) return points;
+
     let p0 = points[0];
     let p1 = points[0];
     let p2 = points[1];
