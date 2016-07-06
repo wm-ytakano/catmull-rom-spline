@@ -28,6 +28,15 @@ describe('catmullRomSpline', function () {
         expect(point).to.eql(results[idx]);
       });
     });
+
+    it('should not generate points if amount of points is less than 3', function () {
+      var coords = [[0,0], [1,1]];
+      var points = spline.points(coords);
+
+      expect(points).to.have.length(2);
+      expect(coords[0]).to.equal(points[0]);
+      expect(coords[1]).to.equal(points[1]);
+    });
   });
 
   describe('slice()', function () {
