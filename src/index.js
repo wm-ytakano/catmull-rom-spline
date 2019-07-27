@@ -13,13 +13,13 @@ module.exports = {
    * @param {Array} points
    * @returns {Array}
    */
-  points (points) {
+  points (points, isClosedCurve = false) {
     const n = points.length;
 
     // Abort if there are not sufficient points to draw a curve
     if (n < 3) return points;
 
-    let p0 = points[0];
+    let p0 = isClosedCurve ? points[n-1] : points[0];
     let p1 = points[0];
     let p2 = points[1];
     let p3 = points[2];
@@ -38,7 +38,7 @@ module.exports = {
       p0 = p1;
       p1 = p2;
       p2 = p3;
-      p3 = points[i + 2] || p3;
+      p3 = points[i + 2] || (isClosedCurve ? points[i + 2 - n] : p3);
     }
 
     return pts;
