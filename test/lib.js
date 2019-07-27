@@ -125,10 +125,15 @@ _m_['src/index.js']=(function(module,exports){
      * @param {Array} points
      * @returns {Array}
      */
-  
     points: function points(_points) {
+      var isClosedCurve = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+  
       var n = _points.length;
-      var p0 = _points[0];
+  
+      // Abort if there are not sufficient points to draw a curve
+      if (n < 3) return _points;
+  
+      var p0 = isClosedCurve ? _points[n - 1] : _points[0];
       var p1 = _points[0];
       var p2 = _points[1];
       var p3 = _points[2];
@@ -140,7 +145,7 @@ _m_['src/index.js']=(function(module,exports){
         p0 = p1;
         p1 = p2;
         p2 = p3;
-        p3 = _points[i + 2] || p3;
+        p3 = _points[i + 2] || (isClosedCurve ? _points[i + 2 - n] : p3);
       }
   
       return pts;
