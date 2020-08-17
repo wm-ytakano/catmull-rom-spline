@@ -3,8 +3,7 @@
   "description": "Convert a series of points to a CatmullRom spline",
   "version": "1.0.3",
   "author": "Alexander Pope <alexander.pope@nrk.no>",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "buddy": "5.0.x",
     "buddy-plugin-babel": "6.7.x",

@@ -63,6 +63,8 @@ module.exports = {
    * @returns {String}
    */
   svgPath: function svgPath(points) {
+    var digits = arguments.length <= 1 || arguments[1] === undefined ? 12 : arguments[1];
+
     var p = '';
 
     for (var i = 0; i < points.length; i++) {
@@ -70,14 +72,14 @@ module.exports = {
       var n = point.length;
 
       if (!i) {
-        p += 'M' + point[n - 2] + ' ' + point[n - 1];
+        p += 'M' + point[n - 2].toFixed(digits) + ' ' + point[n - 1].toFixed(digits);
       } else if (n > 4) {
-        p += 'C' + point[0] + ', ' + point[1];
-        p += ', ' + point[2] + ', ' + point[3];
-        p += ', ' + point[4] + ', ' + point[5];
+        p += 'C' + point[0].toFixed(digits) + ', ' + point[1].toFixed(digits);
+        p += ', ' + point[2].toFixed(digits) + ', ' + point[3].toFixed(digits);
+        p += ', ' + point[4].toFixed(digits) + ', ' + point[5].toFixed(digits);
       } else {
-        p += 'S' + point[0] + ', ' + point[1];
-        p += ', ' + point[2] + ', ' + point[3];
+        p += 'S' + point[0].toFixed(digits) + ', ' + point[1].toFixed(digits);
+        p += ', ' + point[2].toFixed(digits) + ', ' + point[3].toFixed(digits);
       }
     }
 
