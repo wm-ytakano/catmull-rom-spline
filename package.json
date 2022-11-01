@@ -5,8 +5,8 @@
   "author": "Alexander Pope <alexander.pope@nrk.no>",
   "dependencies": {},
   "devDependencies": {
-    "buddy": "5.0.x",
-    "buddy-plugin-babel": "6.7.x",
+    "buddy": "5.1.x",
+    "buddy-plugin-babel": "6.14.x",
     "expect.js": "*",
     "mocha": "*",
     "mocha-phantomjs": "*"
